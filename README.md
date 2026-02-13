@@ -1,4 +1,4 @@
- The Horonoplus Files
+ The Isaac Files
 
 A beautiful, website for displaying and organizing image collections of my favourite bestie.
 
