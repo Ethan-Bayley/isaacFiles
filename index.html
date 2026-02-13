@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Horonoplus Files</title>
+    <title>The Isaac Files</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>The Horonoplus Files</h1>
+        <h1>The Isaac Files</h1>
         <p class="subtitle">A Collection of Images</p>
     </header>
 
     <nav>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-bar" placeholder="Search images..." onkeyup="searchImages()">
+        </div>
         <div class="nav-content">
             <a href="#" class="nav-link active" onclick="showAll(event)">All</a>
             <a href="#" class="nav-link" onclick="filterGallery('favorite', event)">Favorites</a>
@@ -108,7 +111,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 The Horonoplus Files. All rights reserved.</p>
+        <p>&copy; 2026 The Isaac Files. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

@@ -178,6 +178,57 @@ window.addEventListener('keydown', function(event) {
     }
 });
 
+// Calculate Levenshtein distance (edit distance) between two strings
+function levenshteinDistance(str1, str2) {
+    const len1 = str1.length;
+    const len2 = str2.length;
+    const matrix = Array(len2 + 1).fill(null).map(() => Array(len1 + 1).fill(0));
+
+    for (let i = 0; i <= len1; i++) matrix[0][i] = i;
+    for (let j = 0; j <= len2; j++) matrix[j][0] = j;
+
+    for (let j = 1; j <= len2; j++) {
+        for (let i = 1; i <= len1; i++) {
+            const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1;
+            matrix[j][i] = Math.min(
+                matrix[j][i - 1] + 1,
+                matrix[j - 1][i] + 1,
+                matrix[j - 1][i - 1] + indicator
+            );
+        }
+    }
+
+    return matrix[len2][len1];
+}
+
+// Calculate similarity score (0 to 1, where 1 is perfect match)
+function getSimilarityScore(searchTerm, title) {
+    if (searchTerm === '') return 1;
+    if (title.includes(searchTerm)) return 1;
+    
+    const distance = levenshteinDistance(searchTerm, title);
+    const maxDistance = Math.max(searchTerm.length, title.length);
+    return 1 - (distance / maxDistance);
+}
+
+// Search images by title with fuzzy matching
+function searchImages() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('.image-card');
+    const threshold = 0.7; // 70% similarity required
+    
+    cards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const similarity = getSimilarityScore(searchInput, title);
+        
+        if (similarity >= threshold) {
+            card.style.display = '';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
 // Allow clicking on image card to expand or view details
 document.addEventListener('DOMContentLoaded', function() {
     // Load favorites from localStorage when page loads
