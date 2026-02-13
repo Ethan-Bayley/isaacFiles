@@ -469,6 +469,9 @@ footer {
     }
 
     .close-btn {
+        justify-content: center; /* Centers horizontally */
+        align-items: center;
+        text-align: center;
         top: 10px;
         right: 10px;
         font-size: 1.8em;

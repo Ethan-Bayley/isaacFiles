@@ -1,6 +1,7 @@
  The Isaac Files
+ The Isaac Files
 
-A beautiful, responsive website for displaying and organizing image collections.
+A beautiful, website for displaying and organizing image collections of my favourite bestie.
 
 ## Features
 
