@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Horonoplus Files</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>The Horonoplus Files</h1>
+        <p class="subtitle">A Collection of Images</p>
+    </header>
+
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="nav-link active" onclick="showAll(event)">All</a>
+            <a href="#" class="nav-link" onclick="filterGallery('favorite', event)">Favorites</a>
+            <a href="#" class="nav-link" onclick="filterGallery('archive', event)">Archive</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="gallery-container">
+            <div class="gallery" id="gallery">
+                <!-- Images will be loaded here -->
+
+                 <div class="image-card">
+                     <img src="images/Isaac worlds blink-crop.jpg" alt="Isaac being extra nonch" data-full-image="images/Isaac worlds blink.jpg">
+                    <div class="image-info">
+                        <h3>Isaac being extra nonch</h3>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">♡</button>
+                    </div>
+                </div>
+
+                -- <div class="image-card">
+                    <img src="images/pfp.jpg" alt="Isaac's PFP year 8" data-full-image="images/pfp.jpg">
+                    <div class="image-info">
+                        <h3>Isaac's PFP year 8</h3>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">♡</button>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <img src="images/Isaac being tuff-crop.jpg" alt="Isaac being tuff at worlds" data-full-image="images/Isaac being tuff.jpg">
+                    <div class="image-info">
+                        <h3>Isaac being tuff at worlds</h3>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">♡</button>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <img src="images/Isaac chilin with daniel-crop.jpg" alt="Isaac chilin with Daniel" data-full-image="images/Isaac chilin with daniel.jpg">
+                    <div class="image-info">
+                        <h3>Isaac chilin with Daniel</h3>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">♡</button>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <img src="images/Isaac 2024 at syd departures-crop.jpg" alt="Isaac 2024 at syd departures" data-full-image="images/Isaac 2024 at syd departures.jpg">
+                    <div class="image-info">
+                        <h3>Isaac 2024 at syd departures</h3>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">♡</button>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <img src="images/Isaac arua farming like Marlon-crop.jpg" alt="Isaac arua farming like Marlon" data-full-image="images/Isaac arua farming like Marlon.jpg">
+                    <div class="image-info">
+                        <h3>Isaac mogging like Marlon</h3>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">♡</button>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <img src="images/i.jpg" alt="Isaac 2024 at syd departures" data-full-image="images/Isaac 2024 at syd departures.jpg">
+                    <div class="image-info">
+                        <h3>Isaac 2024 at syd departures</h3>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">♡</button>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <img src="images/i.jpg" alt="Isaac 2024 at syd departures" data-full-image="images/Isaac 2024 at syd departures.jpg">
+                    <div class="image-info">
+                        <h3>Isaac 2024 at syd departures</h3>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">♡</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <button class="modal-nav-btn modal-prev" onclick="previousImage()">&#10094;</button>
+            <img id="modalImage" src="" alt="">
+            <button class="modal-nav-btn modal-next" onclick="nextImage()">&#10095;</button>
+            <div class="modal-info">
+                <h2 id="modalTitle"></h2>
+                <button id="modalFavoriteBtn" class="favorite-btn" onclick="toggleModalFavorite()">♡</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 The Horonoplus Files. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
